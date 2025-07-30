@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <title>Projects</title>
+  <link rel="stylesheet" href="css/project.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+<!-- Navbar -->
+<header class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-left">
+      <img src="images/logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="navbar-center">
+      <a href="index.html">Company</a>
+      <a href="project.html">Projects</a>
+    </div>
+    <div class="navbar-right">
+      <a href="https://api.whatsapp.com/send?phone=6282116000100" class="contact-btn">Contact Us</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Project Section -->
+  <!-- Section Cards -->
+<section class="section" id="projects">
+  <h1>Project</h1>
+  <div class="project-container">
+    <div class="project-card" onclick="scrollToProject('tarumanagara-detail')">
+      <img src="images/tarumanagara/1. Ready/R (2).png" alt="Tarumanagara">
+      <div class="project-info">
+        <div class="info-header">
+          <div class="project-title">Tarumanagara</div>
+          <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Jatinangor</div>
+        </div>
+        <div class="unit-count"><i class="fas fa-house"></i> 400 Units</div>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="scrollToProject('vresidence-detail')">
+      <img src="images/residance/o (2).jpeg" alt="V Residence">
+      <div class="project-info">
+        <div class="info-header">
+          <div class="project-title">V Residence</div>
+          <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Baleendah</div>
+        </div>
+        <div class="unit-count"><i class="fas fa-house"></i> 10 Units</div>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="scrollToProject('senopati-detail')">
+      <img src="images/senopati/o (2).jpg" alt="Senopati">
+      <div class="project-info">
+        <div class="info-header">
+          <div class="project-title">Senopati</div>
+          <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Banjaran</div>
+        </div>
+        <div class="unit-count"><i class="fas fa-house"></i> 10 Units</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Detail Section Tarumanagara -->
+
+<section id="tarumanagara-detail" class="project-detail">
+    <h2>TARUMANAGARA <br><span>JATINANGOR</span></h2>
+    <div class="detail-container">
+      <img src="images/tarumanagara/1. Ready/R (1).png" alt="Tarumanagara" class="detail-image">
+      <p>
+        Perumahan modern minimalis yang berlokasi di Jatinangor, dikelilingi 4 Universitas ternama yaitu : UNPAD, ITB, IPDN & IKOPIN dekat dengan fasilitas kesehatan, destinasi wisata, akses tol, stasiun KAI dan moda transportasi lainnya.
+        <br><br>
+        Suasana yang asri dan mempunyai mountain city view yang indah, mempunyai fasilitas yang modern dan lengkap, seperti Masjid, Playground, Club House, Kolam Renang, Kolam Permainan, BBQ Grill Pod dan masih banyak lagi
+        <br><br>
+        Menggunakan one gate sistem dan access card, dilengkapi CCTV dan security 24 jam, membuat kamu makin nyaman tinggal disini !
+      </p>
+    </div>
+</section>
+
+ 
+
+<section id="tarumanagara-detail" class="section project-section">
+  <h2>Galeri</h2>
+  <div class="gallery-filter-group" data-carousel="tarumanagara">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ready">Ready</button>
+    <button class="filter-btn" data-filter="progress">Progress</button>
+  </div>
+
+  <div class="carousel-container" data-carousel="tarumanagara">
+    <button class="nav-arrow left" onclick="moveCarousel('tarumanagara', -1)">‹</button>
+    <div class="carousel-track">
+      <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (1).jpeg" /></div>
+      <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (1).png" /></div>
+      <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (2).jpeg" /></div>
+      <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (2).png" /></div>
+      <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (3).jpeg" /></div>
+      <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (3).png" /></div>
+      <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (4).png" /></div>
+      <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (5).png" /></div>
+      <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (6).png" /></div>
+      <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (7).png" /></div>
+        <div class="card" data-category="ready"><img src="images/tarumanagara/1. Ready/R (8).png" /></div>
+     
+      <div class="card" data-category="progress"><img src="images/tarumanagara/2. On Progress/t (1).jpeg" /></div>
+      <div class="card" data-category="progress"><img src="images/tarumanagara/2. On Progress/t (2).jpeg" /></div>
+      <div class="card" data-category="progress"><img src="images/tarumanagara/2. On Progress/t (3).jpeg" /></div>
+      <div class="card" data-category="progress"><img src="images/tarumanagara/2. On Progress/t (4).jpeg" /></div>
+      <div class="card" data-category="progress"><img src="images/tarumanagara/2. On Progress/t (5).jpeg" /></div>
+      <div class="card" data-category="progress"><img src="images/tarumanagara/2. On Progress/t (6).jpeg" /></div>
+      <div class="card" data-category="progress"><img src="images/tarumanagara/2. On Progress/t (7).jpeg" /></div>
+      <div class="card" data-category="progress"><img src="images/tarumanagara/2. On Progress/t (8).jpeg" /></div>
+
+      
+    </div>
+    <button class="nav-arrow right" onclick="moveCarousel('tarumanagara', 1)">›</button>
+  </div>
+</section>
+
+
+
+    <div class="interest-container">
+    <div class="interest-content">
+      <h3>Are you interested in Tarumanagara Jatinangor?</h3>
+      <p>
+        Kindly contact us to know more about the detail, pricelist, and availability. <br />
+        We will reach you out immediately!
+      </p>
+
+      <div class="button-group">
+        <a href="https://wa.me/6281234567890" target="_blank" class="btn green">Ask via Whatsapp</a>
+        <a href="images/e-browsur/E-BROCHURE/Brosur Tarumanagara.pdf" download class="btn dark">Download E-Brochure</a>
+      </div>
+    </div>
+  </div>
+
+
+ <div class="map-container">
+  <h2>LOCATION</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.448288968209!2d107.78814207499668!3d-6.935225393064767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c5e776c1309b%3A0x13a6310b8e933e88!2sTarumanagara%20Jatinangor!5e1!3m2!1sid!2sid!4v1753438648726!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+
+  <!-- v residance -->
+ 
+<!-- Detail Section Tarumanagara -->
+<section id="vresidence-detail" class="project-detail">
+    <h2>V-RESIDENCE <br><span>BALEENDAH</span></h2>
+    <div class="detail-container">
+      <img src="images/residance/o (2).jpeg" alt="Tarumanagara" class="detail-image">
+      <p>
+          V Residence Baleendah adalah klaster perumahan premium yang berlokasi strategis di Jalan Endung Suryaputra, Baleendah, Kabupaten Bandung. Keunggulan utamanya terletak pada lokasinya yang bebas banjir di tengah kota mandiri Baleendah, menawarkan akses mudah ke berbagai fasilitas umum. Dikembangkan oleh GLOBAL BHUMI RESOURCES, perumahan ini menjanjikan hunian yang aman dan nyaman bagi penghuninya.
+        <br><br>
+ mempunyai fasilitas yang modern dan lengkap, seperti Masjid, Playground, Club House, Kolam Renang, Kolam Permainan, BBQ Grill Pod dan masih banyak lagi
+        <br><br>
+      Perumahan ini menyediakan berbagai tipe rumah komersil yang bisa disesuaikan dengan kebutuhan, mulai dari Tipe 38 hingga 70. Dengan perpaduan antara lokasi prima, jaminan bebas banjir, dan beragam pilihan unit, V Residence Baleendah menjadi opsi menarik bagi Anda yang mencari properti di kawasan Bandung Selatan, baik untuk tempat tinggal maupun investasi.</p>
+    </div>
+</section>
+
+ 
+
+<!-- Galeri Visual Section -->
+<section id="vresidence-gallery" class="section project-section">
+  <h2>Galeri</h2>
+  <div class="gallery-filter-group" data-carousel="vresidence">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ready">InDoor</button>
+    <button class="filter-btn" data-filter="progress">OutDoor</button>
+  </div>
+
+  <div class="carousel-container" data-carousel="vresidence">
+    <button class="nav-arrow left" onclick="moveCarousel('vresidence', -1)">‹</button>
+    <div class="carousel-track">
+      <div class="card" data-category="ready"><img src="images/residance/i (1).jpeg" /></div>
+      <div class="card" data-category="ready"><img src="images/residance/i (1).jpg" /></div>
+      <div class="card" data-category="ready"><img src="images/residance/i (2).jpeg" /></div>
+      <div class="card" data-category="ready"><img src="images/residance/i (3).jpeg" /></div>
+      <div class="card" data-category="ready"><img src="images/residance/i (4).jpeg" /></div>
+      <div class="card" data-category="ready"><img src="images/residance/i (5).jpeg" /></div>
+      <div class="card" data-category="ready"><img src="images/residance/i (6).jpeg" /></div>
+      <div class="card" data-category="ready"><img src="images/residance/i (7).jpeg" /></div>
+      
+      <div class="card" data-category="progress"><img src="images/residance/o (1).jpeg" /></div>
+       <div class="card" data-category="progress"><img src="images/residance/o (2).jpeg" /></div>
+        <div class="card" data-category="progress"><img src="images/residance/o (3).jpeg" /></div>
+     
+    </div>
+    <button class="nav-arrow right" onclick="moveCarousel('vresidence', 1)">›</button>
+  </div>
+</section>
+
+
+  <div class="interest-container">
+  <div class="interest-content">
+    <h3>Are you interested in V-Residence Baleendah?</h3>
+    <p>
+      Kindly contact us to know more about the detail, pricelist, and availability. <br />
+      We will reach you out immediately!
+    </p>
+
+    <div class="button-group">
+      <a href="https://wa.me/6281234567890" target="_blank" class="btn green">Ask via Whatsapp</a>
+      <a href="images/e-browsur/E-BROCHURE/Brosur V-Residence.pdf" download class="btn dark">Download E-Brochure</a>
+    </div>
+  </div>
+</div>
+
+
+ <div class="map-container">
+  <h2>LOCATION</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3428.9376840688683!2d107.6184224749973!3d-7.005008192996319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e978aede2929%3A0xba4213d928d00112!2sV%20Residence%20Baleendah!5e1!3m2!1sid!2sid!4v1753439993646!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+  allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+  <!-- senopati -->
+
+<section id="senopati-detail" class="project-detail">
+    <h2>SENOPATI <br><span>BANJARAN</span></h2>
+    <div class="detail-container">
+      <img src="images/project/tarumanagara.jpg" alt="Tarumanagara" class="detail-image">
+      <p>
+       Senopati Banjaran adalah perumahan minimalis yang berlokasi strategis di Jalan Tarajusari, Banjaran, Kabupaten Bandung. Dikembangkan oleh Nusaco Development, perumahan ini menawarkan akses mudah ke berbagai fasilitas publik seperti Alun-alun Banjaran, Jalan Raya Banjaran, dan fasilitas kesehatan serta pendidikan. Dengan lokasi yang mudah dijangkau dan desain modern, Senopati Banjaran dirancang untuk memenuhi kebutuhan hunian yang praktis dan terjangkau di area Bandung Selatan.
+       <br><br>
+        erumahan ini menyediakan beragam tipe unit rumah dengan desain minimalis yang menarik, mulai dari Tipe 32 hingga Tipe 42, serta dilengkapi dengan fasilitas internal seperti sarana ibadah, kolam renang anak, area bermain, dan keamanan 24 jam. Dengan harga yang kompetitif, Senopati Banjaran menjadi pilihan menarik bagi mereka yang mencari rumah nyaman dan fungsional di Bandung Selatan, cocok untuk keluarga muda maupun sebagai investasi properti.</p>
+    </div>
+</section>
+
+ 
+
+<!-- Galeri Visual Section -->
+<section id="senopati-gallery" class="section project-section">
+  <h2>Galeri</h2>
+  <div class="gallery-filter-group" data-carousel="senopati">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ready">InDoor</button>
+    <button class="filter-btn" data-filter="progress">OutDoor</button>
+  </div>
+
+  <div class="carousel-container" data-carousel="senopati">
+    <button class="nav-arrow left" onclick="moveCarousel('senopati', -1)">‹</button>
+    <div class="carousel-track">
+      <div class="card" data-category="ready"><img src="images/senopati/i (1).jpeg" /></div>
+      <div class="card" data-category="ready"><img src="images/senopati/i (1).jpg" /></div>
+      <div class="card" data-category="ready"><img src="images/senopati/i (2).jpg" /></div>
+      <div class="card" data-category="ready"><img src="images/senopati/i (3).jpg" /></div>
+      <div class="card" data-category="ready"><img src="images/senopati/i (4).jpg" /></div>
+
+      <div class="card" data-category="progress"><img src="images/senopati/o (1).jpg" /></div>
+      <div class="card" data-category="progress"><img src="images/senopati/o (2).jpg" /></div>
+    <div class="card" data-category="progress"><img src="images/senopati/o (3).jpg" /></div>
+    <div class="card" data-category="progress"><img src="images/senopati/o (4).jpg" /></div>
+    <div class="card" data-category="progress"><img src="images/senopati/o (5).jpg" /></div>
+    </div>
+    <button class="nav-arrow right" onclick="moveCarousel('senopati', 1)">›</button>
+  </div>
+</section>
+
+
+  <div class="interest-container">
+  <div class="interest-content">
+    <h3>Are you interested in Senopati Banjaran?</h3>
+    <p>
+      Kindly contact us to know more about the detail, pricelist, and availability. <br />
+      We will reach you out immediately!
+    </p>
+
+    <div class="button-group">
+      <a href="https://wa.me/6281234567890" target="_blank" class="btn green">Ask via Whatsapp</a>
+      <a href="images/e-browsur/E-BROCHURE/Brosur Senopati.pdf" download class="btn dark">Download E-Brochure</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="map-container">
+  <h2>LOCATION</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4077.437235376301!2d107.5769838298883!3d-7.036938129958328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68eb041f85ca3d%3A0xdfa6d5c6d206d4b8!2sSenopati%20Banjaran!5e1!3m2!1sid!2sid!4v1753440426646!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+  allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+</main>
+ 
+<!-- Footer -->
+  <div class="bottom-footer">
+    <div class="footer-col logo">
+        <img src="images/logo.png" alt="Nagara Logo">
+       
+    </div>
+
+    <div class="footer-col">
+        <p><strong>Address</strong><br>
+            <br>
+            <br>
+        Jl. Ahmad Yani No. 332,
+        Kota Bandung, Jawa Barat, 40271</p>
+    </div>
+
+    <div class="footer-col">
+        <p><strong>Contact</strong><br>
+            <br>
+            <br>
+        0821 16000 100<br>
+        <br>
+        nusacodevelopment@gmail.com</p>
+    </div>
+
+    <div class="footer-col">
+        <p><strong>Projects</strong><br>
+            <br>
+            <br>
+        Tarumanagara - Jatinangor<br>
+        <br>
+        Senopati - Banjaran<br>
+        <br>
+        V Residence - Baleendah</p>
+    </div>
+
+    <div class="footer-col">
+        <p><strong>Follow Us</strong></p>
+        <br>
+        <ul class="social-links">
+            <li><a href="https://www.instagram.com/nagara.properti/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@tarumanagarajatinangor" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61570034957237" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="http://www.youtube.com/@TARUMANAGARAJATINANGOR" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+        </ul>
+        
+    </div>
+    
+</div>
+
+<div class="copyright">
+    &copy; 2025 Nagara Properti. All rights reserved.
+</div>
+<!-- Scroll Script -->
+<script>
+  function scrollToProject(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
