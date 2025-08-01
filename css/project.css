@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   background-color: #c8dec7;
   color: #333;
   padding-top: 100px; 
@@ -25,10 +25,11 @@ main {
   top: 0;
   width: 100%;
   z-index: 1000;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease-in-out;
+  backdrop-filter: blur(8px);                /* Sedikit lebih lembut */
+  -webkit-backdrop-filter: blur(8px);        /* Untuk Safari */
+  background-color: rgba(255, 255, 255, 0.07);/* Transparan lembut */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);     /* Shadow lebih halus */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
 }
 
 
@@ -58,7 +59,7 @@ main {
 .navbar-center a,
 .navbar-right a {
   text-decoration: none;
-  color: #333;
+  color: black ;
   font-weight: 600;
 }
 
@@ -233,7 +234,7 @@ h1 {
 
 .project-detail h2 {
   text-align: center;
-  font-family: 'Times New Roman', serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 0;
@@ -488,6 +489,7 @@ h1 {
   margin: 0;
   padding: 0 20px;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 /* Atur iframe agar tampil penuh tanpa overflow */
@@ -576,14 +578,14 @@ h1 {
 
   
   .bottom-footer {
-    margin: 60px auto;
+    margin: 0px auto;
     display: flex;
-    background: #c8dec7;
+    background: #dcf2dc;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     font-size: 0.9em;
-    padding-top: 10px;
+    padding: 40px 60px 0;
     color: #333;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -614,10 +616,11 @@ h1 {
 
 .copyright {
     text-align: center;
-    background-color: #cceecc;
+    background-color: #dcf2dc;
     font-size: 0.8em;
-     margin-top: 0;
-  padding-top: 8px;
+    padding: 10px 0 10px;
+    margin: 0; /* pastikan tidak ada margin */
+
     border-top: 1px solid #3D372F;
     color: #3D372F;
 }
@@ -656,7 +659,7 @@ h1 {
 	transform: translateX(-50%);
 	pointer-events: none;
 	white-space: nowrap;
-	font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
 	background: linear-gradient(
 		to bottom,
 		rgb(8 42 123 / 35%) 30%,
@@ -927,4 +930,47 @@ h1 {
 .hero a.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =====================
+   DROPDOWN MENU
+========================= */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  min-width: 180px;
+  z-index: 1001;
+  padding: 10px 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Tampilkan menu saat hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
 }

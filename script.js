@@ -1,26 +1,42 @@
-let carousels = {};
-let lastScrollTop = 0;
+// =============================
+// == GLOBAL VARIABLE ==
+// =============================
+const carousels = {};
+const navbar = document.querySelector('.navbar');
+let lastScrollTop = window.scrollY || 0;
+const scrollThreshold = 5;
 
-// SEMBUNYIKAN NAVBAR SAAT SCROLL KE BAWAH
 window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop > lastScrollTop && scrollTop > 100) {
-    navbar?.classList.add('navbar-hidden');
-  } else {
-    navbar?.classList.remove('navbar-hidden');
+  const currentScroll = window.scrollY || document.documentElement.scrollTop;
+  console.log("Current:", currentScroll, "Last:", lastScrollTop);
+  if (Math.abs(currentScroll - lastScrollTop) <= scrollThreshold) return;
+
+  if (currentScroll > lastScrollTop && currentScroll > 100) {
+    // Scroll ke bawah → sembunyikan navbar
+    navbar.classList.add('navbar-hidden');
+  } else if (currentScroll < lastScrollTop) {
+    // Scroll ke atas → tampilkan navbar
+    navbar.classList.remove('navbar-hidden');
   }
-  lastScrollTop = Math.max(0, scrollTop);
+
+  // Transparansi: ubah saat scroll > 50
+  if (currentScroll > 50) {
+    navbar.classList.remove('transparent');
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.add('transparent');
+    navbar.classList.remove('scrolled');
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
 
-// SCROLL KE SECTION DETAIL
-function scrollToDetail(id) {
-  const detail = document.getElementById(id);
-  if (detail) detail.scrollIntoView({ behavior: 'smooth' });
-}
 
+// =============================
+// == DOM READY INIT ==
+// =============================
 document.addEventListener('DOMContentLoaded', () => {
-  // INISIALISASI CAROUSEL PER PROYEK
+  // Init carousel for each project
   document.querySelectorAll('.carousel-container').forEach(container => {
     const id = container.dataset.carousel;
     const track = container.querySelector('.carousel-track');
@@ -38,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel(id);
   });
 
-  // FILTER PER PROYEK
+  // Init filter per project
   document.querySelectorAll('.gallery-filter-group .filter-btn').forEach(button => {
     button.addEventListener('click', () => {
       const group = button.closest('.gallery-filter-group');
@@ -52,14 +68,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // DEFAULT FILTER "ALL"
+  // Trigger default filter "all"
   document.querySelectorAll('.gallery-filter-group').forEach(group => {
     const defaultBtn = group.querySelector('[data-filter="all"]');
     if (defaultBtn) defaultBtn.click();
   });
+
+  // Hero section button visibility
+  const heroButton = document.querySelector('.hero a');
+  if (heroButton) heroButton.classList.add('visible');
+
+  // Fade-in/out observer for all fade sections
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-section, .scroll-fade').forEach(el => observer.observe(el));
+
+  // AOS initialization
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      once: true,
+      duration: 800,
+    });
+  }
 });
 
-// FILTER KARTU PER PROYEK
+// =============================
+// == CAROUSEL FUNCTIONS ==
+// =============================
 function applyFilter(id, filter) {
   const data = carousels[id];
   data.visibleCards = [];
@@ -78,7 +121,6 @@ function applyFilter(id, filter) {
   updateCarousel(id);
 }
 
-// NAVIGASI KIRI/ KANAN DENGAN MUTAR
 function moveCarousel(id, direction) {
   const data = carousels[id];
   const total = data.visibleCards.length;
@@ -88,14 +130,13 @@ function moveCarousel(id, direction) {
   updateCarousel(id);
 }
 
-// UPDATE POSISI KARTU 3D
 function updateCarousel(id) {
   const data = carousels[id];
   const cards = data.visibleCards;
   const index = data.currentIndex;
 
   cards.forEach((card, i) => {
-    card.className = 'card'; // reset class
+    card.className = 'card'; // Reset
     card.classList.remove('hidden');
 
     if (i === index) card.classList.add('center');
@@ -105,16 +146,29 @@ function updateCarousel(id) {
     else if (i === (index + 2) % cards.length) card.classList.add('right-2');
     else card.classList.add('hidden');
   });
-};
- AOS.init({
-    once: true, // animasi hanya sekali
-    duration: 800, // durasi animasi (ms)
-  });
+}
 
-  // Tombol hero muncul lambat saat halaman load
-  window.addEventListener('load', () => {
-    const heroButton = document.querySelector('.hero a');
-    if (heroButton) {
-      heroButton.classList.add('visible');
-    }
+// =============================
+// == UTILITIES ==
+// =============================
+function scrollToDetail(id) {
+  const detail = document.getElementById(id);
+  if (detail) detail.scrollIntoView({ behavior: 'smooth' });
+}
+
+const backToTopButton = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+});
+
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
+});
